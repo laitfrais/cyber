@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft Hub — Incident Lab</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>⛏️ Minecraft Hub — Portail membres</h1>
+      <p class="subtitle">Atelier d’investigation cyber (démo volontairement vulnérable)</p>
+    </header>
+
+    <main class="container">
+      <section class="card login-card">
+        <h2>Connexion</h2>  
+        <p>Compte test joueur : <strong>steve</strong> / <strong>minecraft123</strong></p>
+
+        <input type="hidden" id="adminPasswordLeak" value="null" />
+        <!-- admin_user=admin ; admin_password=null -->
+
+        <form id="loginForm">
+          <label>Utilisateur
+            <input id="username" type="text" placeholder="steve" required />
+          </label>
+          <label>Mot de passe
+            <input id="password" type="password" placeholder="••••••" required />
+          </label>
+          <button type="submit">Se connecter</button>
+        </form>
+
+        <div class="actions">
+          <button id="btnAnyProfile">Tester accès non autorisé (?viewUser=alex)</button>
+        </div>
+
+        <p id="loginMessage" class="message"></p>
+      </section>
+
+      <section class="card" id="memberArea">
+        <h2>Espace utilisateur</h2>
+        <p class="section-hint">Zone d'investigation : statut de session, actions et sortie JSON.</p>
+
+        <div class="session-grid">
+          <div class="session-item">
+            <span class="label">Utilisateur connecté</span>
+            <span class="value" id="currentUser">aucun</span>
+          </div>
+          <div class="session-item">
+            <span class="label">Rôle courant</span>
+            <span class="value" id="currentRole">guest</span>
+          </div>
+        </div>
+
+        <h3 class="subheading">Actions rapides</h3>
+        <div class="actions">
+          <button id="btnMyProfile">Voir mon profil</button>
+          <button id="btnAdminPanel">Ouvrir panneau admin</button>
+          <button id="btnFrontShield" class="danger" disabled>Exporter DB</button>
+          <button id="btnLogout" class="secondary">Se déconnecter</button>
+        </div>
+        <p class="section-hint">Indice atelier : ce blocage visuel peut être retiré via l’inspecteur d’éléments.</p>
+
+        <h3 class="subheading">Résultat de l’action</h3>
+        <div id="result" class="result"></div>
+      </section>
+
+      
+    </main>
+
+    <footer class="footer">
+      <p>Démo pédagogique — ne jamais reproduire ces pratiques en production.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

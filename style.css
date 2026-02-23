@@ -1,0 +1,249 @@
+:root {
+  color-scheme: light;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(107, 70, 38, 0.28) 0 14%, transparent 14% 100%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(22, 101, 52, 0.14) 0 20px,
+      rgba(20, 83, 45, 0.14) 20px 40px
+    ),
+    #0b1120;
+  color: #ecfccb;
+}
+
+.topbar {
+  padding: 22px;
+  background: linear-gradient(180deg, #365314 0%, #3f6212 100%);
+  border-bottom: 4px solid #422006;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.24);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fefce8;
+  text-shadow: 1px 1px 0 #3f3f46;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: #dcfce7;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+  border: 3px solid #4b5563;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: inset 0 0 0 2px rgba(17, 24, 39, 0.9), 0 8px 18px rgba(0, 0, 0, 0.32);
+}
+
+.card.small {
+  font-size: 0.95rem;
+}
+
+.login-card {
+  border-color: #854d0e;
+}
+
+h2 {
+  margin-top: 0;
+  color: #fde68a;
+}
+
+.section-hint {
+  margin-top: -2px;
+  color: #cbd5e1;
+}
+
+.session-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 12px 0 8px;
+}
+
+.session-item {
+  background: #0b1220;
+  border: 2px solid #475569;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+}
+
+.value {
+  display: block;
+  margin-top: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fef9c3;
+}
+
+.subheading {
+  margin: 14px 0 8px;
+  font-size: 0.95rem;
+  color: #bbf7d0;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid #6b7280;
+  background: #0b1220;
+  color: #f8fafc;
+}
+
+button {
+  background: linear-gradient(180deg, #65a30d 0%, #4d7c0f 100%);
+  color: white;
+  border: 2px solid #365314;
+  border-radius: 6px;
+  padding: 10px 12px;
+  cursor: pointer;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+  filter: brightness(1.06);
+}
+
+button.secondary {
+  background: linear-gradient(180deg, #64748b 0%, #475569 100%);
+  border-color: #334155;
+}
+
+button.danger {
+  background: linear-gradient(180deg, #dc2626 0%, #991b1b 100%);
+  border-color: #7f1d1d;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(0.35);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.message {
+  min-height: 20px;
+  margin-top: 10px;
+  color: #fde68a;
+  font-weight: 600;
+}
+
+.result {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px dashed #64748b;
+  background: #0b1220;
+  min-height: 140px;
+  color: #e2e8f0;
+}
+
+.result-note {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.result-panel h4 {
+  margin: 0 0 10px;
+  color: #fde68a;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.result-item {
+  border: 1px solid #475569;
+  border-radius: 6px;
+  background: #111827;
+  padding: 8px;
+}
+
+.result-item span {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.result-item strong {
+  color: #f8fafc;
+}
+
+.result-item.warning {
+  border-color: #f59e0b;
+  background: #292524;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #111827;
+}
+
+.users-table th,
+.users-table td {
+  border: 1px solid #475569;
+  padding: 8px;
+  text-align: left;
+}
+
+.users-table th {
+  background: #1f2937;
+  color: #fde68a;
+}
+
+.footer {
+  text-align: center;
+  color: #cbd5e1;
+  padding: 18px;
+}
